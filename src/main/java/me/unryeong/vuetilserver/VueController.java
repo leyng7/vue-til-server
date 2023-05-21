@@ -35,7 +35,7 @@ public class VueController {
     @PostMapping("/login")
     public LoginRes login(@RequestBody User user) {
         User findUser = userRepository.findByUsername(user.getUsername()).orElseThrow();
-        return new LoginRes(true, findUser, "Login success", UUID.randomUUID().toString().replace("=", ""));
+        return new LoginRes(true, findUser, "Login success", UUID.randomUUID().toString());
     }
 
     @Data

@@ -28,6 +28,7 @@ public class UserRepository {
     }
 
     public Optional<User> findByUsername(String username) {
+        log.info("store = {}", store);
         return Optional.of(store.get(username));
     }
 }
